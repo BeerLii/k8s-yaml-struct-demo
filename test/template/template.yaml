@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Deployment
+metadata:
+  name: {{ .AppName }}
+spec:
+  replicas: {{ .ReplicaCount }}
+  template:
+    spec:
+      containers:
+        - name: {{ .AppName }}
+          image: {{ .Image }}
+
+---
+
+apiVersion: v1
+kind: Deployment
+metadata:
+  name: test1
+spec:
+  replicas: {{ .ReplicaCount }}
+  template:
+    spec:
+      containers:
+        - name: test1
+          image: {{ .Image }}

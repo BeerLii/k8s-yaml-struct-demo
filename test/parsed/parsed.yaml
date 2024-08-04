@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Deployment
+metadata:
+  name: my-app
+spec:
+  replicas: 3
+  template:
+    spec:
+      containers:
+        - name: my-app
+          image: myregistry/my-app:v1.0.0
+
+---
+
+apiVersion: v1
+kind: Deployment
+metadata:
+  name: test1
+spec:
+  replicas: 3
+  template:
+    spec:
+      containers:
+        - name: test1
+          image: myregistry/my-app:v1.0.0
